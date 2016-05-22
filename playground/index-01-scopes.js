@@ -467,8 +467,8 @@
 // closure();
 
 // Solutions to example 1 problem
-var people = ["Edwin", "Jon", "Joan", "James"];
-var list = document.getElementById("people-list");
+// var people = ["Edwin", "Jon", "Joan", "James"];
+// var list = document.getElementById("people-list");
 
 // ---------------------
 // Example 20: Solution 1
@@ -487,7 +487,7 @@ var list = document.getElementById("people-list");
 // }
 
 // ---------------------
-// Example 21: Solution 2. Use an IIFE
+// Example 20: Solution 2. Use an IIFE
 // for(var i = 0; i < people.length; i++){
 //     var person = people[i];
 //     var element = document.createElement("li");
@@ -522,22 +522,89 @@ var list = document.getElementById("people-list");
 // }
 
 // ---------------------
-// Example 22: Solution 3. High order functions.
-function forEach(array, callback){
-    for(var i = 0; i < array.length; i++) {
-        callback(array[i]);         
-    }
-} 
+// Example 20: Solution 3. High order functions.
+// function forEach(array, callback){
+//     for(var i = 0; i < array.length; i++) {
+//         callback(array[i]);         
+//     }
+// } 
 
-forEach(people, function(person){
-    var element = document.createElement("li");
-    element.innerText = person;
-    element.addEventListener("click", function() {
-        alert("You clicked on " + person);
-    });
+// forEach(people, function(person){
+//     var element = document.createElement("li");
+//     element.innerText = person;
+//     element.addEventListener("click", function() {
+//         alert("You clicked on " + person);
+//     });
     
-    list.appendChild(element); 
-});
+//     list.appendChild(element); 
+// });
+
+// ---------------------
+// Example 21: ES2015 Block Scoping with let
+//Both let and const declare block scope variables.
+// function example21a() {
+//     if (true) { //this is not a block
+//         var test = "testA";
+//     }
+    
+//     console.log(test); //testA
+// }
+
+// example21a(); 
+
+// function example21b() {
+//     if(true) {
+//         let test = "testB"; //test isblock scoped variable, doesn't exist outside of if block
+//         console.log(test); //testB
+//     }
+    
+//     console.log(test); //Uncaught ReferenceError: test is not defined
+// }
+
+// example21b(); 
+
+// ---------------------
+// Example 22: solution 4
+// var people = ["Edwin", "Jon", "Joan", "James"];
+// var list = document.getElementById("people-list");
+
+// for(let i = 0; i < people.length; i++){
+//     let person = people[i];
+//     let element = document.createElement("li");
+//     element.innerText = person;
+//     element.addEventListener("click", function() {
+//         alert("You clicked on " + person + ", at index " + i);        
+//     });
+    
+//     list.appendChild(element);
+// }
+ 
+// ---------------------
+// Example 23: ES2015 Block Scoping with const
+//with const we cannot change variable, but we CAN change the values
+const person = {name: "Jon"}
+person.name = "Doe";
+console.log(person); // Object {name: "Doe"}
+person = {}; // Uncaught TypeError: Assignment to constant variable.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
