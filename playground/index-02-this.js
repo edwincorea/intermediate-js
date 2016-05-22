@@ -42,7 +42,7 @@ button.addEventListener("click", person.printName); //"this" is part of the exec
 // doThing(); //undefined property because "this" is the global Window object
 person.printName();//Edwin, because "this" is the person object
 
-//**this keyword is determined on how you invoke a function
+//**this keyword is determined on who invokes the function and how the function is invoked 
 var person2 = {
     firstName: "Jon",
     lastName: "Doe"
